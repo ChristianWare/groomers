@@ -1,0 +1,218 @@
+.header {
+  position: relative;
+  z-index: 1;
+  margin: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.navbar {
+  border-radius: 15px;
+  background-color: var(--blue);
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+}
+
+.navItems {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navItem {
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  color: var(--gray);
+  z-index: 999;
+  font-family: var(--SFUIMedium);
+}
+
+.black {
+  color: var(--black);
+}
+
+.white {
+  color: var(--white);
+}
+
+.btnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.navItemsMobile,
+.btnContainerMobile {
+  display: none;
+}
+
+.noBackgroundWhiteText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-family: var(--inter);
+  font-weight: 600;
+  font-size: 1.5rem;
+  width: 100%;
+  background-color: transparent;
+  color: var(--white);
+  width: 100%;
+  white-space: nowrap;
+}
+
+.phone {
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: var(--white);
+}
+
+.hamburgerContainer {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  z-index: 999;
+  position: relative;
+}
+
+.whiteBar {
+  position: relative;
+  z-index: 9999;
+  display: block;
+  width: 55px;
+  height: 3px;
+  margin: 5px auto;
+  border-radius: 15px;
+  background-color: var(--gray);
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 1168px) {
+  .navbar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .navItems {
+    position: fixed;
+    right: -100%;
+    top: 1rem;
+    width: calc(100% - 2rem);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3rem;
+    padding: 2rem;
+    padding-top: 7rem;
+    background: var(--blue);
+    border-radius: 15px;
+    transition: right 0.3s ease-in;
+    z-index: 3000; /* Increased z-index to ensure nav menu is on top */
+  }
+
+  .navItems.active {
+    right: 1rem;
+  }
+
+  .navItem {
+    color: var(--gray);
+    font-size: 8vw;
+    font-family: var(--bebasNeue);
+    text-transform: uppercase;
+    line-height: 1;
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    z-index: 9999;
+  }
+
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btnContainer {
+    order: 1;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .logoContainer {
+    order: 2;
+  }
+
+  .hamburgerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    order: 3;
+  }
+
+  .hamburger.active .whiteBar:nth-child(1) {
+    -webkit-transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
+    /* background-color: var(--tan); */
+  }
+
+  .hamburger.active .whiteBar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .whiteBar:nth-child(3) {
+    -webkit-transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
+    /* background-color: var(--tan); */
+  }
+
+  .btn1 {
+    display: none;
+  }
+
+  .navbar {
+    padding: 0.8rem 2rem;
+  }
+
+  .phone {
+    width: 5rem;
+    height: 5rem;
+    position: relative;
+    top: 3px;
+  }
+
+  .phoneText {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .header {
+    margin-top: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .btnContainer {
+    display: none;
+  }
+}

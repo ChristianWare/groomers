@@ -1,0 +1,38 @@
+.container {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.3rem 3rem;
+  font-family: var(--montserrat);
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+  /* border-radius: 7px; */
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.icon {
+  font-size: 2rem;
+  position: relative;
+  top: -1px;
+}
+
+.tanOutline {
+  border: 2px solid var(--tan);
+  color: var(--tan);
+}
+
+.tanOutline:hover {
+  background-color: var(--tan);
+  color: var(--black);
+}

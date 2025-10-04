@@ -1,15 +1,30 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import { Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
+  variable: "--poppins",
   subsets: ["latin"],
+  weight: ["300", "400", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const montserrat = Montserrat({
+  variable: "--montserrat",
   subsets: ["latin"],
+  weight: ["300", "400", "700"],
+});
+
+const CareFreeSemiBold = localFont({
+  src: "../../public/fonts/CareFreeSemiBold.woff",
+  variable: "--CareFreeSemiBold",
+  display: "swap",
+});
+
+const CareFreeSemiBoldItalic = localFont({
+  src: "../../public/fonts/CareFreeSemiBoldItalic.woff",
+  variable: "--CareFreeSemiBoldItalic",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -23,8 +38,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang='en'>
+      <body
+        className={`${CareFreeSemiBold.variable} ${poppins.variable} ${CareFreeSemiBoldItalic.variable} ${montserrat.variable}`}
+      >
         {children}
       </body>
     </html>
