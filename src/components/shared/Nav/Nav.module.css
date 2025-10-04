@@ -40,6 +40,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  font-family: var(--Magilio);
+  font-size: 2rem;
 }
 
 .navItems {

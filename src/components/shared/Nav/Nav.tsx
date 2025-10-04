@@ -108,7 +108,7 @@ export default function Nav({
       ref={navRef}
     >
       <nav className={styles.navbar}>
-        <div className={styles.logoContainer}>{/* <Logo /> */}G G C</div>
+        <div className={styles.logoContainer}>{/* <Logo /> */}G . G . C .</div>
 
         <div
           className={
