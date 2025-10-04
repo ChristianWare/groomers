@@ -1,8 +1,10 @@
 :root {
-  --tan: #E9E1D9;
+  --tan: #e9e1d9;
   --darkTan: #d7cbbf;
   --darkTanii: #bab0a6;
+  --darkTaniii: #a8a097;
   --green: #e6f6ba;
+  --olive: #8a9570;
   --black: #2c2c2c;
   --blue: #0d47a1;
   --lightBlue: #5c6bc0;
@@ -60,10 +62,8 @@ span {
   font-family: var(--Magilio);
   text-transform: uppercase;
   hyphens: auto;
-  line-height: 0.95;
+  line-height: 1.2;
 }
-
-
 
 h1 {
   font-size: 8rem;

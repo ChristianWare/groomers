@@ -143,8 +143,8 @@ export default function Nav({
             <Button
               href='https://calendly.com/chris-ware-dev/discovery-call'
               target='_blank'
-              text='Book your discovery call'
-              btnType='brownOutline'
+              text='Book now'
+              btnType='green'
               // onClick={closeMenu}
             />
           </div>
@@ -161,8 +161,8 @@ export default function Nav({
           <Button
             href='https://calendly.com/chris-ware-dev/discovery-call'
             target='_blank'
-            text='Book your discovery call'
-            btnType='brownOutline'
+            text='Book now'
+            btnType='green'
           />
         </div>
 

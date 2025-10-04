@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem 3rem;
+  padding: .7rem 3rem;
   /* font-family: var(--montserrat); */
   font-weight: 400;
   font-size: 1.1rem;
@@ -28,19 +28,19 @@
 }
 
 .tanOutline {
-  border: 1px solid var(--darkTan);
+  border: 2px solid var(--darkTaniii);
   color: var(--tan);
 }
 
 .tanOutline:hover {
-  background-color: var(--tan);
+  background-color: var(--darkTaniii);
   color: var(--black);
 }
 
 .tan {
-  border: 1px solid var(--tan);
-  background-color: var(--tan);
-  color: var(--black);
+  border: 2px solid var(--darkTaniii);
+  background-color: var(--darkTaniii);
+  color: var(--tan);
 }
 
 .tan:hover {
@@ -57,4 +57,16 @@
 .brownOutline:hover {
   background-color: var(--brown);
   color: var(--tan);
+}
+
+.green {
+  border: 1px solid var(--green);
+  background-color: var(--green);
+  color: var(--brown);
+}
+
+.green:hover {
+  border: 1px solid var(--brown);
+  background-color: var(--brown);
+  color: var(--green);
 }
