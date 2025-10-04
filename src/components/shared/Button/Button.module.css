@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: .7rem 3rem;
+  padding: 0.7rem 3rem;
   /* font-family: var(--montserrat); */
   font-weight: 400;
   font-size: 1.1rem;
@@ -19,12 +19,6 @@
   width: 100%;
   transition: all 0.2s ease-in-out;
   white-space: nowrap;
-}
-
-.icon {
-  font-size: 2rem;
-  position: relative;
-  top: -1px;
 }
 
 .tanOutline {
@@ -49,9 +43,9 @@
 }
 
 .brownOutline {
-  border: 1px solid var(--darkTanii);
-  background-color: var(--darkTanii);
-  color: var(--green);
+  border: 1px solid var(--brown);
+  background-color: var(--tan);
+  color: var(--brown);
 }
 
 .brownOutline:hover {
@@ -69,4 +63,16 @@
   border: 1px solid var(--brown);
   background-color: var(--brown);
   color: var(--green);
+}
+
+.white {
+  border: 1px solid var(--white);
+  background-color: var(--white);
+  color: var(--brown);
+}
+
+.white:hover {
+  border: 1px solid var(--olive);
+  background-color: var(--olive);
+  color: var(--tan);
 }

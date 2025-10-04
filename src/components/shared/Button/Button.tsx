@@ -1,7 +1,7 @@
 import styles from "./Button.module.css";
 import { ReactNode } from "react";
 import Link from "next/link";
-import ChevronRight from "@/components/icons/ChevronRight/ChevronRight";
+// import ChevronRight from "@/components/icons/ChevronRight/ChevronRight";
 
 interface Props {
   href: string;
@@ -33,7 +33,7 @@ export default function Button({
         target={target}
       >
         {content}
-        <ChevronRight className={styles.icon} />
+        {/* <ChevronRight className={styles.icon} /> */}
       </Link>
     </button>
   );

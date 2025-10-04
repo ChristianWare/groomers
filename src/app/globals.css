@@ -60,12 +60,12 @@ h6,
 span {
   color: var(--black);
   font-family: var(--Magilio);
-  text-transform: uppercase;
   hyphens: auto;
   line-height: 1.2;
 }
 
 h1 {
+  text-transform: uppercase;
   font-size: 8rem;
   line-height: 1;
   letter-spacing: 2px;
@@ -73,6 +73,7 @@ h1 {
 
 h2 {
   font-size: 5.5rem;
+  line-height: 1;
 }
 
 h3 {
