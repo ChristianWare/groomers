@@ -1,6 +1,6 @@
 :root {
-
-  --tan: #E7E5D8;
+  --tan: #e7e5d8;
+  --green: #e6f6ba;
   --black: #2c2c2c;
   --blue: #0d47a1;
   --lightBlue: #5c6bc0;
@@ -156,6 +156,12 @@ button {
   color: var(--black);
 } */
 
+@media screen and (max-width: 1168px) {
+  h1 {
+    font-size: 9vw;
+  }
+}
+
 @media screen and (max-width: 968px) {
   html {
     font-size: 55%;
@@ -175,7 +181,7 @@ button {
 
 @media screen and (max-width: 768px) {
   h1 {
-    font-size: 5.4rem;
+    font-size: 8vw;
   }
 
   input,
@@ -192,7 +198,7 @@ button {
   }
 
   h1 {
-    font-size: 13vw;
+    font-size: 8vw;
     line-height: 1.1;
   }
 

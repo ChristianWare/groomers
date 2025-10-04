@@ -2,17 +2,21 @@
 
 import Link from "next/link";
 import styles from "./Nav.module.css";
-import Logo from "../Logo/Logo";
-import Button from "../Button/Button";
-import { MouseEvent, useEffect, useState } from "react";
-import Phone from "@/components/icons/Phone/Phone";
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+// import Logo from "../Logo/Logo";
+// import Button from "../Button/Button";
+// import { MouseEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+// import Logo from "../Logo/Logo";
+// import Search from "@/components/icons/Search/Search";
+// import Phone from "@/components/icons/Phone/Phone";
+// import { useSession } from "next-auth/react";
+// import { useRouter } from "next/navigation";
 
 const navItems = [
   { text: "Home", href: "/" },
   { text: "services", href: "/services" },
   { text: "About", href: "/about" },
+  { text: "Gallery", href: "/gallery" },
   { text: "Contact", href: "/contact" },
 ];
 
@@ -23,7 +27,7 @@ interface Props {
 
 export default function Nav({ color = "", hamburgerColor = "" }: Props) {
   const [isOpen, setIsOpen] = useState(false);
-  const { data: session, status } = useSession();
+  // const { data: session, status } = useSession();
 
   useEffect(() => {
     const body = document.body;
@@ -42,24 +46,27 @@ export default function Nav({ color = "", hamburgerColor = "" }: Props) {
     setIsOpen(!isOpen);
   };
 
-  const router = useRouter();
+  // const router = useRouter();
 
-  const handleAccountClick = (e: MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    setIsOpen(false);
-    if (status === "loading") return;
-    if (!session) {
-      router.push("/login");
-    } else if (session.user?.role === "ADMIN") {
-      router.push("/admin");
-    } else {
-      router.push("/dashboard");
-    }
-  };
+  // const handleAccountClick = (e: MouseEvent<HTMLAnchorElement>) => {
+  //   e.preventDefault();
+  //   setIsOpen(false);
+  //   if (status === "loading") return;
+  //   if (!session) {
+  //     router.push("/login");
+  //   } else if (session.user?.role === "ADMIN") {
+  //     router.push("/admin");
+  //   } else {
+  //     router.push("/dashboard");
+  //   }
+  // };
 
   return (
     <header className={styles.header}>
       <nav className={styles.navbar}>
+        <div className={styles.logoContainer}>
+          {/* <Logo /> */}LOGO HERE
+        </div>
         <div
           className={
             isOpen === false
@@ -78,35 +85,19 @@ export default function Nav({ color = "", hamburgerColor = "" }: Props) {
             </Link>
           ))}
           <Link
-            href={session ? "/dashboard" : "/login"}
-            onClick={handleAccountClick}
+            // href={session ? "/dashboard" : "/login"}
+            // onClick={handleAccountClick}
+            href='/'
             className={`${styles.navItem} ${styles[color]}`}
             prefetch={false}
           >
             My Account
           </Link>
-          {/* <div className={styles.btnContainerii}>
-            <Button
-              href='/contact'
-              text='Book Now'
-              btnType='noBackgroundBlueText'
-              arrow
-            />
+
+          {/* <div className={styles.btnContainer}>
+            <Button href='/booking' text='Book now' btnType='tan' arrow />
           </div> */}
-        </div>
-        <div className={styles.logoContainer}>
-          <Logo />
-        </div>
-        <div className={styles.btnContainer}>
-          <div className={styles.btn1}>
-            <Button href='/booking' text='Book now' btnType='orangeNav' arrow />
-          </div>
-          <div className={styles.btn2}>
-            <Link href='/' className={styles.noBackgroundWhiteText}>
-              <Phone className={styles.phone} />
-              <div className={styles.phoneText}>(480) 555-5555</div>
-            </Link>
-          </div>
+          {/* <Search className={styles.icon} /> */}
         </div>
         <div className={styles.hamburgerContainer}>
           <span

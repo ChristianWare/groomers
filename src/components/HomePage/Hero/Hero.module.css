@@ -1,6 +1,5 @@
 .parent {
   background-color: var(--floral-white);
-  /* padding-top: 10rem; */
 }
 
 .container {
@@ -12,7 +11,7 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background: linear-gradient(rgba(10, 7, 27, 0.7), rgba(10, 7, 27, 0.7));
+  background: linear-gradient(rgba(10, 7, 27, 0.6), rgba(10, 7, 27, 0.6));
 }
 
 .img {
@@ -35,7 +34,8 @@
   text-align: center;
 }
 
-.span, .spanii {
+.span,
+.spanii {
   z-index: 3;
   color: var(--tan);
   font-family: var(--CareFreeSemiBoldItalic);
@@ -51,11 +51,16 @@
   z-index: 3;
   text-align: center;
   color: var(--tan);
-  width: 60%;
+  width: 50%;
 }
 
 .btnContainer {
   z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
 }
 
 @media screen and (max-width: 1268px) {
@@ -63,20 +68,15 @@
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .heading,
-  .copy {
-    text-align: center;
-  }
-
   .copy {
     width: 80%;
+  }
+}
+
+@media screen and (max-width: 1168px) {
+  .span,
+  .spanii {
+    font-size: 8vw;
   }
 }
 
@@ -86,24 +86,32 @@
   }
 
   .content {
-    padding: 10rem 5rem;
-  }
-
-  .imgOverlay {
-    clip-path: var(--clip-path-1);
-  }
-
-  .img {
-    clip-path: var(--clip-path-1);
+    padding: 10rem 0rem;
   }
 
   .copy {
     width: 100%;
   }
+
+  .span,
+  .spanii {
+    font-size: 7vw;
+  }
+
+  .spanii {
+    margin-right: 0.5rem;
+  }
 }
 
 @media screen and (max-width: 568px) {
   .content {
-    padding: 10rem 5rem;
+    padding: 7rem 0rem;
+  }
+
+  .btnContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2rem;
+    width: 100%;
   }
 }

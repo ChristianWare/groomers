@@ -1,13 +1,13 @@
 .header {
   position: relative;
-  z-index: 1;
-  margin: 1rem;
-  margin-bottom: 1.5rem;
+  z-index: 3;
+  padding: 1rem;
+  /* background-color: var(--floral-white); */
 }
 
 .navbar {
-  border-radius: 15px;
-  background-color: var(--blue);
+  /* border-radius: 15px; */
+  /* background-color: var(--blue); */
   margin: 0 auto;
   padding: 1rem 2rem;
   display: flex;
@@ -20,16 +20,24 @@
 .navItems {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  justify-content: space-between;
+  gap: 3rem;
   list-style: none;
 }
 
 .navItem {
   text-transform: capitalize;
   font-size: 1.4rem;
-  color: var(--gray);
+  letter-spacing: 2.8px;
+  color: var(--tan);
   z-index: 999;
-  font-family: var(--SFUIMedium);
+  font-family: var(--montserrat);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.icon {
+  color: var(--purple);
 }
 
 .black {
@@ -38,13 +46,6 @@
 
 .white {
   color: var(--white);
-}
-
-.btnContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
 }
 
 .navItemsMobile,
@@ -91,16 +92,11 @@
   height: 3px;
   margin: 5px auto;
   border-radius: 15px;
-  background-color: var(--gray);
+  background-color: var(--tan);
   transition: all 0.3s ease-in-out;
 }
 
-@media screen and (max-width: 1168px) {
-  .navbar {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
+@media screen and (max-width: 968px) {
   .navItems {
     position: fixed;
     right: -100%;
@@ -112,10 +108,10 @@
     gap: 3rem;
     padding: 2rem;
     padding-top: 7rem;
-    background: var(--blue);
+    /* background: var(--blue); */
     border-radius: 15px;
     transition: right 0.3s ease-in;
-    z-index: 3000; /* Increased z-index to ensure nav menu is on top */
+    z-index: 3000; 
   }
 
   .navItems.active {
@@ -123,9 +119,9 @@
   }
 
   .navItem {
-    color: var(--gray);
+    /* color: var(--gray); */
     font-size: 8vw;
-    font-family: var(--bebasNeue);
+    /* font-family: var(--bebasNeue); */
     text-transform: uppercase;
     line-height: 1;
     width: 100%;
@@ -196,12 +192,6 @@
 
   .phoneText {
     display: none;
-  }
-}
-
-@media screen and (max-width: 870px) {
-  .header {
-    margin-top: 2.5rem;
   }
 }
 
