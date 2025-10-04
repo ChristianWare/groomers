@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Poppins, Montserrat } from "next/font/google";
+import { Instrument_Sans } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
-  variable: "--poppins",
+const instrumentSans = Instrument_Sans({
+  variable: "--instrumentSans",
   subsets: ["latin"],
-  weight: ["300", "400", "700"],
-});
-
-const montserrat = Montserrat({
-  variable: "--montserrat",
-  subsets: ["latin"],
-  weight: ["300", "400", "700"],
+  weight: ["400", "600", "600", "700"],
 });
 
 const CareFreeSemiBold = localFont({
@@ -24,6 +18,12 @@ const CareFreeSemiBold = localFont({
 const CareFreeSemiBoldItalic = localFont({
   src: "../../public/fonts/CareFreeSemiBoldItalic.woff",
   variable: "--CareFreeSemiBoldItalic",
+  display: "swap",
+});
+
+const Magilio = localFont({
+  src: "../../public/fonts/Magilio.ttf",
+  variable: "--Magilio",
   display: "swap",
 });
 
@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${CareFreeSemiBold.variable} ${poppins.variable} ${CareFreeSemiBoldItalic.variable} ${montserrat.variable}`}
+        className={`${CareFreeSemiBold.variable} ${instrumentSans.variable} ${CareFreeSemiBoldItalic.variable} ${Magilio.variable}`}
       >
         {children}
       </body>

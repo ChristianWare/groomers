@@ -17,8 +17,10 @@ export default function Hero() {
           <div className={styles.content}>
             <SectionIntro title='Dog Groomers' />
             <h1 className={styles.heading}>
-              <span className={styles.span}>the</span> great <br />
-              groomers <span className={styles.spanii}>of </span> California
+              {/* <span className={styles.span}>the</span> great <br />
+              groomers <span className={styles.span}>of </span> <br />California */}
+              The great <br /> groomers of
+              <br /> California
             </h1>
             <p className={styles.copy}>
               Fear-free spa appointments with real-time booking and upfront
@@ -26,7 +28,7 @@ export default function Hero() {
             </p>
             <div className={styles.btnContainer}>
               <Button btnType='tanOutline' text='Book Now' href='/' arrow />
-              <Button btnType='tanOutline' text='See Services' href='/' arrow />
+              <Button btnType='tan' text='See Services' href='/' arrow />
             </div>
           </div>
         </LayoutWrapper>

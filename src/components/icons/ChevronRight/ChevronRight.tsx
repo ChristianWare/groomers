@@ -8,7 +8,7 @@ export default function ChevronRight(props: SVGProps<SVGSVGElement>) {
       width='1em'
       height='1em'
       fill='none'
-      strokeWidth={2}
+      strokeWidth={1.5}
       stroke='currentColor'
       xmlns='http://www.w3.org/2000/svg'
       {...props} /* allows className, onClick, etc. */

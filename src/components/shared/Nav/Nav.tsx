@@ -3,37 +3,30 @@
 import Link from "next/link";
 import styles from "./Nav.module.css";
 // import Logo from "../Logo/Logo";
-// import Button from "../Button/Button";
-// import { MouseEvent, useEffect, useState } from "react";
-import { useEffect, useState } from "react";
-// import Logo from "../Logo/Logo";
-// import Search from "@/components/icons/Search/Search";
-// import Phone from "@/components/icons/Phone/Phone";
-// import { useSession } from "next-auth/react";
-// import { useRouter } from "next/navigation";
+import Button from "../Button/Button";
+import { useEffect, useState, MouseEvent, useRef } from "react";
+import { createPortal } from "react-dom"; // ← add this
+import Image from "next/image";
+import Img1 from "../../../../public/images/hero.jpg";
+// import SectionIntroii from "../SectionIntroii/SectionIntroii";
+import { usePathname } from "next/navigation";
 
-const navItems = [
-  { text: "Home", href: "/" },
-  { text: "services", href: "/services" },
-  { text: "About", href: "/about" },
-  { text: "Gallery", href: "/gallery" },
-  { text: "Contact", href: "/contact" },
-];
-
-interface Props {
+export default function Nav({
+  color = "",
+  hamburgerColor = "",
+}: {
   color?: string;
   hamburgerColor?: string;
-}
-
-export default function Nav({ color = "", hamburgerColor = "" }: Props) {
+}) {
   const [isOpen, setIsOpen] = useState(false);
-  // const { data: session, status } = useSession();
+  const [showNav, setShowNav] = useState(true);
+  const navRef = useRef<HTMLElement | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const body = document.body;
     body.style.overflow =
-      window.innerWidth <= 910 && isOpen ? "hidden" : "auto";
-
+      window.innerWidth <= 1068 && isOpen ? "hidden" : "auto";
     const handleResize = () => setIsOpen(false);
     window.addEventListener("resize", handleResize);
     return () => {
@@ -42,83 +35,155 @@ export default function Nav({ color = "", hamburgerColor = "" }: Props) {
     };
   }, [isOpen]);
 
-  const openMenu = () => {
-    setIsOpen(!isOpen);
+  const toggleMenu = () => setIsOpen((s) => !s);
+  const closeMenu = () => setIsOpen(false);
+
+  const handleHamburgerClick = (e: MouseEvent<HTMLSpanElement>) => {
+    e.stopPropagation();
+    toggleMenu();
   };
 
-  // const router = useRouter();
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
 
-  // const handleAccountClick = (e: MouseEvent<HTMLAnchorElement>) => {
-  //   e.preventDefault();
-  //   setIsOpen(false);
-  //   if (status === "loading") return;
-  //   if (!session) {
-  //     router.push("/login");
-  //   } else if (session.user?.role === "ADMIN") {
-  //     router.push("/admin");
-  //   } else {
-  //     router.push("/dashboard");
-  //   }
-  // };
+    const setProgress = () => {
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - window.innerHeight;
+      const p =
+        max > 0 ? Math.min(100, Math.max(0, (window.scrollY / max) * 100)) : 0;
+      if (navRef.current)
+        navRef.current.style.setProperty("--progress", `${p}%`);
+    };
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (!isOpen && currentScrollY > lastScrollY && currentScrollY > 100) {
+        setShowNav(false);
+      } else if (currentScrollY < lastScrollY) {
+        setShowNav(true);
+      }
+      lastScrollY = currentScrollY;
+      setProgress();
+    };
+
+    const optimizedHandleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    setProgress();
+    window.addEventListener("scroll", optimizedHandleScroll);
+    window.addEventListener("resize", optimizedHandleScroll);
+    return () => {
+      window.removeEventListener("scroll", optimizedHandleScroll);
+      window.removeEventListener("resize", optimizedHandleScroll);
+    };
+  }, [isOpen]);
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
+   const items = [
+     { text: "About", href: "/about" },
+     { text: "Work", href: "/work" },
+     { text: "Pricing", href: "/pricing" },
+     { text: "Blog", href: "/blog" },
+     { text: "Contact", href: "/contact" },
+     { text: "My Account", href: "/account" },
+   ];
 
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${
+        showNav || isOpen ? styles.show : styles.hide
+      } ${isOpen ? styles.open : ""}`}
+      ref={navRef}
+    >
       <nav className={styles.navbar}>
-        <div className={styles.logoContainer}>
-          {/* <Logo /> */}LOGO HERE
-        </div>
+        <div className={styles.logoContainer}>{/* <Logo /> */}G G C</div>
+
         <div
           className={
-            isOpen === false
-              ? styles.navItems
-              : `${styles.navItems} ${styles.active}`
+            isOpen ? `${styles.navItems} ${styles.active}` : styles.navItems
           }
-          onClick={openMenu}
         >
-          {navItems.map((item, index) => (
-            <Link
-              key={index}
-              href={item.href}
-              className={`${styles.navItem} ${styles[color]}`}
-            >
-              {item.text}
-            </Link>
-          ))}
-          <Link
-            // href={session ? "/dashboard" : "/login"}
-            // onClick={handleAccountClick}
-            href='/'
-            className={`${styles.navItem} ${styles[color]}`}
-            prefetch={false}
-          >
-            My Account
-          </Link>
+          {items.map((item) => {
+            const active = isActive(item.href);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`${styles.navItem} ${styles[color]} ${
+                  active ? styles.navItemActive : ""
+                }`}
+                onClick={closeMenu}
+                aria-current={active ? "page" : undefined}
+              >
+                {item.text}
+              </Link>
+            );
+          })}
 
-          {/* <div className={styles.btnContainer}>
-            <Button href='/booking' text='Book now' btnType='tan' arrow />
-          </div> */}
-          {/* <Search className={styles.icon} /> */}
+          <div className={styles.menuImage}>
+            <Image src={Img1} alt='Menu image' fill className={styles.img} />
+            {/* <div className={styles.menuImageOverlay}>
+              <SectionIntroii title='Fonts & Footers' color='tan' />
+            </div> */}
+          </div>
+
+          <div className={styles.btnContainerii}>
+            <Button
+              href='https://calendly.com/chris-ware-dev/discovery-call'
+              target='_blank'
+              text='Book your discovery call'
+              btnType='brownOutline'
+              // onClick={closeMenu}
+            />
+          </div>
         </div>
-        <div className={styles.hamburgerContainer}>
+
+        {/* PORTALED OVERLAY */}
+        {isOpen &&
+          createPortal(
+            <div className={styles.overlay} onClick={closeMenu} />,
+            document.body
+          )}
+
+        <div className={styles.btnContainer}>
+          <Button
+            href='https://calendly.com/chris-ware-dev/discovery-call'
+            target='_blank'
+            text='Book your discovery call'
+            btnType='brownOutline'
+          />
+        </div>
+
+        <span
+          className={
+            isOpen ? `${styles.hamburger} ${styles.active}` : styles.hamburger
+          }
+          onClick={handleHamburgerClick}
+          aria-expanded={isOpen}
+          role='button'
+        >
           <span
-            className={
-              isOpen === false
-                ? styles.hamburger
-                : `${styles.hamburger} ${styles.active}`
-            }
-            onClick={openMenu}
-          >
-            <span
-              className={`${styles.whiteBar} ${styles[hamburgerColor]}`}
-            ></span>
-            <span
-              className={`${styles.whiteBar} ${styles[hamburgerColor]}`}
-            ></span>
-            <span
-              className={`${styles.whiteBar} ${styles[hamburgerColor]}`}
-            ></span>
-          </span>
-        </div>
+            className={`${styles.whiteBar} ${styles[hamburgerColor]}`}
+          ></span>
+          <span
+            className={`${styles.whiteBar} ${styles[hamburgerColor]}`}
+          ></span>
+          <span
+            className={`${styles.whiteBar} ${styles[hamburgerColor]}`}
+          ></span>
+        </span>
       </nav>
     </header>
   );

@@ -9,13 +9,13 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 1.3rem 3rem;
-  font-family: var(--montserrat);
-  font-weight: 700;
-  font-size: 1.4rem;
-  letter-spacing: 2.8px;
+  padding: 1rem 3rem;
+  /* font-family: var(--montserrat); */
+  font-weight: 400;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  /* border-radius: 7px; */
+  border-radius: 50px;
   width: 100%;
   transition: all 0.2s ease-in-out;
   white-space: nowrap;
@@ -28,11 +28,33 @@
 }
 
 .tanOutline {
-  border: 2px solid var(--tan);
+  border: 1px solid var(--darkTan);
   color: var(--tan);
 }
 
 .tanOutline:hover {
   background-color: var(--tan);
   color: var(--black);
+}
+
+.tan {
+  border: 1px solid var(--tan);
+  background-color: var(--tan);
+  color: var(--black);
+}
+
+.tan:hover {
+  background-color: transparent;
+  color: var(--tan);
+}
+
+.brownOutline {
+  border: 1px solid var(--darkTanii);
+  background-color: var(--darkTanii);
+  color: var(--green);
+}
+
+.brownOutline:hover {
+  background-color: var(--brown);
+  color: var(--tan);
 }
