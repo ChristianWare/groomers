@@ -18,14 +18,14 @@ const data = [
   {
     id: 2,
     title: "Full Grooming",
-    description: "A gentle bath and blowout to keep your pet clean and fluffy.",
+    description: "A full grooming session including bath, haircut, nail trim, and ear cleaning.",
     price: "From $75",
     src: Img2,
   },
   {
     id: 3,
     title: "Spa Add-Ons",
-    description: "A gentle bath and blowout to keep your pet clean and fluffy.",
+    description: "Add a little extra to your pet's grooming with our spa add-ons.",
     price: "From $125",
     src: Img3,
   },
@@ -45,8 +45,9 @@ export default function FeaturedServices() {
             </div>
             <div className={styles.topRight}>
               <p className={styles.copy}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Numquam qui ipsam beatae, dolor libero laborum.
+                From baths and haircuts to nail trims and ear cleaning, our
+                experienced groomers will pamper your pet with care and
+                attention.
               </p>
               <div className={styles.btnContainer}>
                 <Button btnType='white' text='See all services' href='/' />
@@ -62,7 +63,6 @@ export default function FeaturedServices() {
                     <h3 className={styles.title}>{x.title}</h3>
                   </div>
                   <div className={styles.metaBottom}>
-                    {/* <p className={styles.price}>{x.price}</p> */}
                     <p className={styles.desc}>{x.description}</p>
                   </div>
                   <Image

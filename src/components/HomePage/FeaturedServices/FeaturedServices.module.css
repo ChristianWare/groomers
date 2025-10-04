@@ -72,6 +72,7 @@
   flex-direction: column;
   gap: 0.25rem;
   align-items: flex-start;
+  padding-right: 2rem;
 }
 
 .metaBottom {
@@ -144,6 +145,10 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+  }
+
+  .metaBottom {
+    left: 1rem
   }
 
   .copy,
