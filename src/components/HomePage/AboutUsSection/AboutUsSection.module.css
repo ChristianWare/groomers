@@ -1,0 +1,41 @@
+.container {
+  background-color: var(--darkTan);
+  padding: 10rem 0rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15rem;
+}
+
+.imgContainer {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  background-color: var(--tan);
+  border-radius: 10px;
+}
+
+.img {
+  padding: 2rem;
+  object-fit: cover;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.heading {
+  color: var(--brown);
+}
+
+.copy {
+  color: var(--text);
+  width: 80%;
+}

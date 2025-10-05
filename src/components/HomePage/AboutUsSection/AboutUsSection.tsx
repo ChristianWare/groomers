@@ -3,13 +3,23 @@ import styles from "./AboutUsSection.module.css";
 import Image from "next/image";
 import SectionIntro from "@/components/shared/SectionIntro/SectionIntro";
 import Button from "@/components/shared/Button/Button";
+import Img1 from '../../../../public/images/doggy.jpg'
 
 export default function AboutUsSection() {
   return (
     <section className={styles.container}>
       <LayoutWrapper>
         <div className={styles.content}>
-          <div className={styles.left}></div>
+          <div className={styles.left}>
+            <div className={styles.imgContainer}>
+              <Image
+                src={Img1}
+                alt='About Us'
+                fill
+                className={styles.img}
+              />
+            </div>
+          </div>
           <div className={styles.right}>
             <SectionIntro title='About US' />
             <h2 className={styles.heading}>

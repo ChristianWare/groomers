@@ -13,7 +13,7 @@
   --lightOrange: rgba(255, 113, 67, 0.5);
   --gray: #edeff1;
   --white: #ffffff;
-  --text: #5c5959;
+  --text: #695B4D;
   --lightgray: #d7cfcf;
   --brown: #594a3c;
 }
@@ -60,7 +60,7 @@ h6,
 span {
   color: var(--black);
   font-family: var(--Magilio);
-  hyphens: auto;
+  /* hyphens: auto; */
   line-height: 1.2;
 }
 

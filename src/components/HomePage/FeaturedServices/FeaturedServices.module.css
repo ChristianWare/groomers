@@ -1,6 +1,7 @@
 .container {
   background-color: var(--tan);
   padding: 5rem 0rem;
+  padding-bottom: 10rem;
 }
 
 .content {
@@ -117,6 +118,7 @@
 
   .heading {
     margin-top: 0rem;
+    text-align: center;
   }
 
   .copy {

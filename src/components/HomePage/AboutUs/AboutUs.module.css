@@ -1,0 +1,161 @@
+.container {
+  padding: 20rem 0rem;
+  padding-bottom: 10rem;
+  background-color: var(--darkTan);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.heading {
+  width: 80%;
+  color: var(--brown);
+}
+
+.copy {
+  width: 80%;
+  color: var(--text);
+}
+
+.leftBottom {
+  background-color: var(--brown);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  grid-gap: 3rem;
+  padding: 2rem;
+}
+
+.lbLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.lbRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
+  gap: 2rem;
+}
+
+.lbRightCopy {
+  color: var(--green);
+  opacity: 0.6;
+}
+
+.imgContainerii {
+  position: relative;
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+}
+
+.imgii {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.lbRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.bold {
+  color: var(--green);
+}
+
+.right {
+  height: 100%;
+}
+
+.imgContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.img {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 1468px) {
+  .content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  .content {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .leftBottom {
+    width: 80%;
+  }
+
+  .imgContainer {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    grid-gap: 2rem;
+  }
+
+  .heading,
+  .copy {
+    width: 100%;
+    text-align: center;
+  }
+
+  .left {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .leftBottom {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .leftBottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding-top: 3rem;
+  }
+}
