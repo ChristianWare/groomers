@@ -32,7 +32,7 @@
 }
 
 .leftBottom {
-  background-color: var(--brown);
+  background-color: var(--tan);
   border-radius: 10px;
   display: grid;
   grid-template-columns: 2fr 4fr;
@@ -57,7 +57,7 @@
 }
 
 .lbRightCopy {
-  color: var(--green);
+  color: var(--brown);
   opacity: 0.6;
 }
 
@@ -82,7 +82,7 @@
 }
 
 .bold {
-  color: var(--green);
+  color: var(--brown);
 }
 
 .right {
