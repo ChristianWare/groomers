@@ -1,5 +1,6 @@
 :root {
   --tan: #e9e1d9;
+  --tanii: #d2cac1;
   --darkTan: #d7cbbf;
   --darkTanii: #bab0a6;
   --darkTaniii: #a8a097;
@@ -62,6 +63,8 @@ span {
   font-family: var(--Magilio);
   /* hyphens: auto; */
   line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+
 }
 
 h1 {
@@ -73,6 +76,7 @@ h1 {
 
 h2 {
   font-size: 5.5rem;
+  letter-spacing: -0.4px;
   line-height: 1;
 }
 

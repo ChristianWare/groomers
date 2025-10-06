@@ -18,14 +18,16 @@ const data = [
   {
     id: 2,
     title: "Full Grooming",
-    description: "A full grooming session including bath, haircut, nail trim, and ear cleaning.",
+    description:
+      "A full grooming session including bath, haircut, nail trim, and ear cleaning.",
     price: "From $75",
     src: Img2,
   },
   {
     id: 3,
     title: "Spa Add-Ons",
-    description: "Add a little extra to your pet's grooming with our spa add-ons.",
+    description:
+      "Add a little extra to your pet's grooming with our spa add-ons.",
     price: "From $125",
     src: Img3,
   },
@@ -57,11 +59,18 @@ export default function FeaturedServices() {
           <div className={styles.bottom}>
             {data.map((x) => (
               <div key={x.id} className={styles.card}>
+                <div className={styles.bottomCornerContainer}>
+                  <div className={styles.bottomCorner}>
+                    {/* <div className={styles.metaTop}> */}
+                      <h3 className={styles.title}>{x.title}</h3>
+                    {/* </div> */}
+                  </div>
+                </div>
                 <div className={styles.imgContainer}>
                   <div className={styles.imgOverlay} />
-                  <div className={styles.metaTop}>
+                  {/* <div className={styles.metaTop}>
                     <h3 className={styles.title}>{x.title}</h3>
-                  </div>
+                  </div> */}
                   <div className={styles.metaBottom}>
                     <p className={styles.desc}>{x.description}</p>
                   </div>

@@ -53,6 +53,17 @@
   color: var(--tan);
 }
 
+.brown {
+  border: 1px solid var(--brown);
+  background-color: var(--brown);
+  color: var(--tan);
+}
+
+.brown:hover {
+  background-color: var(--tan);
+  color: var(--brown);
+}
+
 .green {
   border: 1px solid var(--green);
   background-color: var(--green);

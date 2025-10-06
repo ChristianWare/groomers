@@ -1,7 +1,8 @@
 .container {
   padding: 5rem 0rem;
-  /* padding-bottom: 10rem; */
-  background-color: var(--darkTan);
+  /* background-color: var(--darkTan); */
+  background: #D7CBBF;
+background: linear-gradient(180deg, rgba(215, 203, 191, 1) 50%, rgba(233, 225, 217, 1) 100%);
 }
 
 .content {
