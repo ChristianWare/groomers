@@ -1,0 +1,97 @@
+.container {
+  background-color: var(--brown);
+  margin: 1rem;
+  border-radius: 15px;
+  padding: 5rem;
+  margin-bottom: -1rem;
+}
+
+.heading {
+  text-align: center;
+  color: var(--tan);
+  line-height: 1.2;
+}
+
+.copy {
+  color: var(--tanii);
+  width: 40%;
+  text-align: center;
+}
+
+.footerContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 3rem;
+}
+
+.footerLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.workingHoursBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.workingHoursTitle {
+  color: var(--white);
+  font-size: 1.6rem;
+}
+
+.workingHoursList {
+  list-style: none;
+}
+
+.workingHoursList li {
+  color: var(--white);
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.7;
+}
+
+.socialsContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.icon {
+  font-size: 3rem;
+  color: var(--tan);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 868px) {
+  .container {
+    padding: 3rem;
+  }
+
+  .copy {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .container {
+    padding: 3rem 2rem;
+  }
+
+  .copy {
+    width: 100%;
+  }
+
+  .heading {
+    font-size: 8vw;
+    line-height: 1.2;
+  }
+}

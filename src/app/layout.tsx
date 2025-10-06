@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Instrument_Sans } from "next/font/google";
 import "./globals.css";
+import Nav from "@/components/shared/Nav/Nav";
+import Footer from "@/components/shared/Footer/Footer";
 
 const instrumentSans = Instrument_Sans({
   variable: "--instrumentSans",
@@ -42,7 +44,9 @@ export default function RootLayout({
       <body
         className={`${CareFreeSemiBold.variable} ${instrumentSans.variable} ${CareFreeSemiBoldItalic.variable} ${Magilio.variable}`}
       >
+        <Nav />
         {children}
+        <Footer />
       </body>
     </html>
   );
