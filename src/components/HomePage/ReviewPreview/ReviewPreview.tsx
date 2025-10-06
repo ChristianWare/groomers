@@ -32,8 +32,10 @@ export default function ReviewPreview() {
                 <h3 className={styles.title}>Late Summer Yoga Retreat</h3>
                 <span className={styles.customerName}>Christina A.</span>
                 <p className={styles.review}>
-                  Comb & Great Groomers of California transformed my anxious dog
-                  into a relaxed and happy pup. I can&#39;t thank them enough!
+                  I’ve never seen my dog look so good! The grooming team at GGC
+                  took such great care of Tiranoia. She came home looking and
+                  feeling amazing. I can’t recommend PawHaven enough for pet
+                  care services
                 </p>
                 <div className={styles.btnContainer}>
                   <Button btnType='white' text='View Details' href='/' />

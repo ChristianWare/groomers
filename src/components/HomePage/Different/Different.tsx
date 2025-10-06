@@ -4,7 +4,7 @@ import SectionIntro from "@/components/shared/SectionIntro/SectionIntro";
 import Button from "@/components/shared/Button/Button";
 import Image from "next/image";
 import Img1 from "../../../../public/images/different.jpg";
-import { title } from "process";
+import Dog from "@/components/icons/Dog/Dog";
 
 const data = [
   {
@@ -29,10 +29,11 @@ export default function Different() {
           <div className={styles.left}>
             <div className={styles.leftTop}>
               <SectionIntro title='First time with us?' />
-              <h2 className={styles.title}>Start your journey gently.</h2>
+              <h2 className={styles.heading}>What makes us different?</h2>
               <p className={styles.copy}>
-                Everything you need to know — how to prepare, what to bring, and
-                what to expect from your first visit.
+                With a dedicated team of experienced professionals, personalized
+                attention, and a genuine love for animals, we’re committed to
+                keeping your pets happy, healthy, and safe
               </p>
               <div className={styles.btnContainer}>
                 <Button btnType='white' text='View Details' href='/' />
@@ -41,6 +42,7 @@ export default function Different() {
             <div className={styles.leftBottom}>
               {data.map((item) => (
                 <div key={item.id} className={styles.card}>
+                  <Dog className={styles.icon} />
                   <h3 className={styles.title}>{item.title}</h3>
                   <p className={styles.desc}>{item.description}</p>
                 </div>
