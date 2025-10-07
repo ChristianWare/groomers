@@ -3,7 +3,6 @@ import styles from "./Hero.module.css";
 import Image from "next/image";
 import Img1 from "../../../../public/images/hero.jpg";
 import Button from "@/components/shared/Button/Button";
-// import Nav from "@/components/shared/Nav/Nav";
 import SectionIntro from "@/components/shared/SectionIntro/SectionIntro";
 
 export default function Hero() {
@@ -11,14 +10,11 @@ export default function Hero() {
     <section className={styles.parent}>
       <div className={styles.container}>
         <div className={styles.imgOverlay} />
-        {/* <Nav /> */}
         <Image src={Img1} alt='Hero Image' fill className={styles.img} />
         <LayoutWrapper>
           <div className={styles.content}>
             <SectionIntro title='Dog Groomers' />
             <h1 className={styles.heading}>
-              {/* <span className={styles.span}>the</span> great <br />
-              groomers <span className={styles.span}>of </span> <br />California */}
               The great <br /> groomers of
               <br /> California
             </h1>
