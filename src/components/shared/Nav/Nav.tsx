@@ -93,9 +93,9 @@ export default function Nav({
 
    const items = [
      { text: "About", href: "/about" },
-     { text: "Work", href: "/work" },
+     { text: "Services", href: "/services" },
+     { text: "Gallery", href: "/gallery" },
      { text: "Pricing", href: "/pricing" },
-     { text: "Blog", href: "/blog" },
      { text: "Contact", href: "/contact" },
      { text: "My Account", href: "/account" },
    ];
