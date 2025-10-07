@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import styles from "./Nav.module.css";
-// import Logo from "../Logo/Logo";
+import Logo from "../Logo/Logo";
 import Button from "../Button/Button";
 import { useEffect, useState, MouseEvent, useRef } from "react";
 import { createPortal } from "react-dom"; // ← add this
@@ -108,7 +108,9 @@ export default function Nav({
       ref={navRef}
     >
       <nav className={styles.navbar}>
-        <div className={styles.logoContainer}>{/* <Logo /> */}G . G . C .</div>
+        <div className={styles.logoContainer}>
+          <Logo />
+          </div>
 
         <div
           className={

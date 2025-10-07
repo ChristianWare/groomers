@@ -1,0 +1,33 @@
+.logo {
+  cursor: pointer;
+  font-family: var(--Magilio);
+  z-index: 999;
+  line-height: 1;
+  font-size: 2rem;
+  /* letter-spacing: 1px; */
+  color: var(--brown);
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.icon {
+  position: relative;
+  top: -2px;
+}
+
+@media screen and (max-width: 1068px) {
+  .logo {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .tailOne,
+  .tailTwo {
+    display: none;
+  }
+}
