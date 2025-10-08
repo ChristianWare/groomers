@@ -1,0 +1,201 @@
+.container {
+  background-color: var(--tan);
+  padding: 10rem 0rem;
+}
+
+.top {
+  /* border-bottom: 5px solid var(--black); */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.left,
+.right {
+  flex: 1;
+  width: 100%;
+}
+
+.copy {
+  width: 90%;
+  font-size: 1.8rem;
+  color: var(--black);
+  width: 40%;
+}
+
+.letsTalkContainer {
+  width: fit-content;
+  padding: 3rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: var(--darkTan);
+}
+
+.letsTalkContainer h3 {
+  color: var(--brown);
+}
+
+.iconInfoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--brown);
+}
+
+.info {
+  color: var(--brown);
+  font-size: 1.6rem;
+  font-weight: 700;
+  word-break: break-all;
+}
+
+.form {
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid var(--tanii);
+  width: 100%;
+}
+
+.namesContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  width: 100%;
+}
+
+.labelInputBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1.5rem;
+  flex: 1;
+  width: 100%;
+}
+
+.labelInputBox label {
+  font-weight: 400;
+  color: var(--text);
+  padding-left: 0.3rem;
+}
+
+.labelInputBox input,
+.labelInputBox textarea {
+  border-radius: 8px;
+  border-color: var(--tanii);
+  border-width: 1px;
+  height: 40px;
+  width: 100%;
+  color: var(--text);
+  background-color: var(--gray);
+  padding: 1rem;
+  width: 100%;
+  font-weight: 400;
+}
+
+.labelInputBox span {
+  font-size: 1.4rem;
+  color: rgb(140, 139, 139);
+}
+
+.labelInputBox textarea {
+  height: 130px;
+  resize: vertical;
+}
+
+.error {
+  color: red !important;
+}
+
+.btnBtnContainer {
+  margin-top: 3rem;
+}
+
+@media screen and (max-width: 1268px) {
+  .top {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    display: flex;
+  }
+
+  .copy {
+    width: 60%;
+    text-align: center;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 758px) {
+  .copy {
+    width: 100%;
+  }
+
+  .letsTalkContainer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .container {
+    padding-top: 5rem;
+    padding-bottom: 0rem;
+  }
+
+  .copy {
+    width: 100%;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .letsTalkContainer {
+    width: 100%;
+  }
+
+  .namesContainer {
+    flex-direction: column;
+    gap: 0rem;
+  }
+}

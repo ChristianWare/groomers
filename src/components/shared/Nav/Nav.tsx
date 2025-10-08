@@ -91,14 +91,13 @@ export default function Nav({
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 
-   const items = [
-     { text: "About", href: "/about" },
-     { text: "Services", href: "/services" },
-     { text: "Gallery", href: "/gallery" },
-     { text: "Pricing", href: "/pricing" },
-     { text: "Contact", href: "/contact" },
-     { text: "My Account", href: "/account" },
-   ];
+  const items = [
+    { text: "About", href: "/about" },
+    { text: "Services", href: "/services" },
+    { text: "Gallery", href: "/gallery" },
+    { text: "Contact", href: "/contact" },
+    { text: "My Account", href: "/account" },
+  ];
 
   return (
     <header
@@ -110,7 +109,7 @@ export default function Nav({
       <nav className={styles.navbar}>
         <div className={styles.logoContainer}>
           <Logo />
-          </div>
+        </div>
 
         <div
           className={
