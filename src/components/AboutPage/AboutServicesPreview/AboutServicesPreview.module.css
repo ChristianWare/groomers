@@ -1,0 +1,137 @@
+.container {
+  padding: 15rem 0rem;
+  background-color: var(--darkTan);
+  overflow: hidden;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.heading {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  width: 80%;
+  /* color: var(--brown); */
+}
+
+.copy {
+  margin-bottom: 3rem;
+  color: var(--text);
+}
+
+.mapDataContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.mapDataTitle {
+  font-weight: 600;
+  color: var(--brown);
+}
+
+.btnContainer {
+  margin-top: 5rem;
+}
+
+.right {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr;
+  min-height: 24rem;
+}
+
+.leftArrow,
+.rightArrow {
+  position: absolute;
+  background-color: var(--green);
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  border: none;
+  cursor: pointer;
+}
+
+.leftArrow {
+  left: -3rem;
+}
+
+.leftArrow .icon {
+  transform: rotate(-90deg);
+}
+
+.rightArrow {
+  right: -3rem;
+}
+
+.rightArrow .icon {
+  transform: rotate(90deg);
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.track {
+  display: flex;
+  will-change: transform;
+  gap: 2rem;
+  height: 100%;
+}
+
+.slide {
+  flex: 0 0 50%;
+  height: 100%;
+}
+
+.frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.img1 {
+  object-fit: cover;
+}
+
+.leftArrow[disabled],
+.rightArrow[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 1068px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .right {
+    min-height: 40rem;
+  }
+}

@@ -1,0 +1,112 @@
+.container {
+  padding: 10rem 0rem;
+  background-color: var(--tan);
+}
+
+.content {
+  background-color: var(--darkTan);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 3rem;
+  padding: 6rem 3rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgContainer {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 1 / 1;
+}
+
+.img {
+  object-fit: cover;
+  background-color: var(--green);
+  object-position: center;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.heading {
+  text-align: center;
+}
+
+.copy {
+  
+  text-align: center;
+  color: var(--text);
+  width: 60%;
+}
+
+.dataMap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+
+.dataItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.dataIcon {
+  color: var(--brown);
+  font-size: 3rem;
+}
+
+.dataTitle {
+  color: var(--brown);
+  font-weight: 600;
+  font-size: 2rem;
+  text-transform: none;
+}
+
+@media screen and (max-width: 1268px) {
+  .content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .left {
+    justify-content: center;
+  }
+
+  .imgContainer {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .heading,
+  .copy {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dataMap {
+    width: 100%;
+  }
+}
