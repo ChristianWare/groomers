@@ -143,7 +143,7 @@ export default async function AdminPage() {
                   <TH>Actions</TH>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className={styles.tbody}>
                 {newBookings.length === 0 ? (
                   <tr>
                     <TD colSpan={7} className={styles.center}>

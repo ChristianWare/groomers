@@ -23,6 +23,7 @@
 
 .monthLabel {
   font-weight: 600;
+  font-family: var(--interTight);
 }
 
 .controls {
@@ -37,6 +38,7 @@
   gap: 6px;
   font-size: 13px;
   color: #333;
+  font-family: var(--interTight);
 }
 
 .btn {
@@ -49,6 +51,7 @@
   text-decoration: none;
   appearance: none;
   line-height: 1;
+  font-family: var(--interTight);
 }
 
 .btn:hover {
@@ -76,10 +79,6 @@
   -webkit-overflow-scrolling: touch;
 }
 
-/* .inner {
-  min-width: 840px;
-} */
-
 .gridHead {
   position: sticky;
   top: 0;
@@ -92,12 +91,13 @@
 }
 
 .dowCell {
-  /* font-size: 12px; */
   color: var(--white);
   padding: 8px;
   border-bottom: 1px solid #f3f3f3;
   background: var(--lightBlue);
   text-align: center;
+  font-family: var(--interTight);
+  font-weight: 500;
   border-radius: 6px 6px 0 0;
 }
 
@@ -132,18 +132,6 @@
   outline-offset: 0;
 }
 
-/* .pastDay {
-  background-image: linear-gradient(
-    to bottom left,
-    transparent calc(50% - 1.5px),
-    rgba(220, 0, 0, 0.6) calc(50% - 1px),
-    rgba(220, 0, 0, 0.6) calc(50% + 1px),
-    transparent calc(50% + 1.5px)
-  );
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-} */
-
 .dayTop {
   display: flex;
   align-items: center;
@@ -159,8 +147,9 @@
 .dayNumDesk {
   margin-left: auto;
   font-size: 14px;
-  color: #333;
+  font-family: var(--interTight);
   font-weight: 700;
+  color: #333;
 }
 
 .empty {
@@ -179,14 +168,16 @@
 
 .countChip {
   display: inline-block;
-  padding: 10px 14px;
+  padding: 5px 10px;
   border-radius: 999px;
   background: green;
   color: #fff;
   border: 1px solid #111;
   text-decoration: none;
+  font-family: var(--interTight);
+  letter-spacing: 0.7px;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1;
   touch-action: manipulation;
 }
@@ -311,18 +302,67 @@
   background: #b33636;
 }
 
+.dayCell.dayCellOther {
+  background: #f2f4f7;
+  border-color: #e5e7eb;
+  color: #6b7280;
+}
+
+.dayCell.dayCellOther .dayLabel,
+.dayCell.dayCellOther .dayNumDesk {
+  color: #6b7280;
+}
+
+.dayCell.dayCellOther .empty {
+  color: #9ca3af;
+}
+
+.dayCell.dayCellOther .countChip {
+  background: #cbd5e1;
+  border-color: #cbd5e1;
+  color: #1f2937;
+}
+
+.dayCell.dayCellOther.today {
+  background: #eaf8ee;
+  border-color: #bfe8cc;
+  color: inherit;
+}
+
+.monthPickerDesktop {
+  display: inline-block;
+}
+
+.monthYearMobile {
+  display: none;
+  gap: 8px;
+}
+
+.select {
+  appearance: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+  font-family: var(--interTight);
+  line-height: 1;
+}
+
+.select:hover {
+  background: #f7f7f7;
+}
+
 @media screen and (max-width: 1068px) {
   .header {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .dayCell {
     min-height: 100px;
     padding: 10px;
   }
 }
-
 
 @media screen and (max-width: 968px) {
   .inner {
@@ -332,14 +372,16 @@
     display: none;
   }
   .gridDays {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   .dayCell {
-    /* min-height: 100px; */
     padding: 14px;
   }
   .dayLabel {
     display: inline;
+    font-family: var(--interTight);
+    font-weight: 700;
+    font-size: 1.6rem;
   }
   .dayNumDesk {
     display: none;
@@ -355,5 +397,17 @@
   }
   .monthLabel {
     font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .gridDays {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .monthPickerDesktop {
+    display: none;
+  }
+  .monthYearMobile {
+    display: inline-flex;
   }
 }

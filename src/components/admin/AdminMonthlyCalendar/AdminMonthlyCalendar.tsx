@@ -21,6 +21,7 @@ const MONTHS = [
   "Nov",
   "Dec",
 ];
+const YEARS_WINDOW = 5;
 
 type ApiBooking = {
   id: string;
@@ -143,6 +144,13 @@ export default function AdminMonthlyCalendar() {
     return { grid, first, last, map };
   }, [monthDate, bookings, filters]);
 
+  const YEARS = useMemo(() => {
+    const current = new Date().getFullYear();
+    const start = current - YEARS_WINDOW;
+    const end = current + YEARS_WINDOW;
+    return Array.from({ length: end - start + 1 }, (_, i) => start + i);
+  }, []);
+
   function goPrev() {
     setMonthDate((cur) => new Date(cur.getFullYear(), cur.getMonth() - 1, 1));
   }
@@ -152,11 +160,19 @@ export default function AdminMonthlyCalendar() {
   function goToday() {
     setMonthDate(startOfMonth(new Date()));
   }
-  function onPickMonth(e: React.ChangeEvent<HTMLInputElement>) {
+  function onPickMonthDesktop(e: React.ChangeEvent<HTMLInputElement>) {
     const val = e.target.value;
     if (!val) return;
     const [y, m] = val.split("-").map(Number);
     setMonthDate(new Date(y, m - 1, 1));
+  }
+  function onPickMonthMobile(e: React.ChangeEvent<HTMLSelectElement>) {
+    const newMonthIdx = Number(e.target.value);
+    setMonthDate((cur) => new Date(cur.getFullYear(), newMonthIdx, 1));
+  }
+  function onPickYearMobile(e: React.ChangeEvent<HTMLSelectElement>) {
+    const newYear = Number(e.target.value);
+    setMonthDate((cur) => new Date(newYear, cur.getMonth(), 1));
   }
 
   const touchStartX = useRef<number | null>(null);
@@ -223,10 +239,40 @@ export default function AdminMonthlyCalendar() {
             value={`${monthDate.getFullYear()}-${String(
               monthDate.getMonth() + 1
             ).padStart(2, "0")}`}
-            onChange={onPickMonth}
-            className={`${styles.btn} ${styles.monthPicker}`}
+            onChange={onPickMonthDesktop}
+            className={`${styles.btn} ${styles.monthPicker} ${styles.monthPickerDesktop}`}
             aria-label='Jump to month'
           />
+          <div
+            className={styles.monthYearMobile}
+            aria-label='Jump to month and year'
+          >
+            <select
+              className={styles.select}
+              value={monthDate.getMonth()}
+              onChange={onPickMonthMobile}
+              aria-label='Select month'
+            >
+              {MONTHS.map((label, idx) => (
+                <option key={label} value={idx}>
+                  {label}
+                </option>
+              ))}
+            </select>
+            <select
+              className={styles.select}
+              value={monthDate.getFullYear()}
+              onChange={onPickYearMobile}
+              aria-label='Select year'
+            >
+              {YEARS.map((y) => (
+                <option key={y} value={y}>
+                  {y}
+                </option>
+              ))}
+            </select>
+          </div>
+
           <label className={styles.checkboxLabel}>
             <input
               type='checkbox'
@@ -262,7 +308,9 @@ export default function AdminMonthlyCalendar() {
                 const isOtherMonth = d.getMonth() !== monthDate.getMonth();
                 const isToday = key === todayYMD;
                 const isPast = key < todayYMD;
-                const label = `${WEEKDAYS[d.getDay()]}, ${MONTHS[d.getMonth()]} ${d.getDate()}`;
+                const label = `${WEEKDAYS[d.getDay()]}, ${
+                  MONTHS[d.getMonth()]
+                } ${d.getDate()}`;
 
                 return (
                   <div
@@ -346,12 +394,12 @@ export default function AdminMonthlyCalendar() {
                           b.status === "CONFIRMED"
                             ? styles.badge_confirmed
                             : b.status === "PENDING"
-                              ? styles.badge_pending
-                              : b.status === "COMPLETED"
-                                ? styles.badge_completed
-                                : b.status === "CANCELED"
-                                  ? styles.badge_canceled
-                                  : styles.badge_noshow
+                            ? styles.badge_pending
+                            : b.status === "COMPLETED"
+                            ? styles.badge_completed
+                            : b.status === "CANCELED"
+                            ? styles.badge_canceled
+                            : styles.badge_noshow
                         }`}
                       >
                         {b.status.replace("_", " ")}

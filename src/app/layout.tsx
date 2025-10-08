@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Instrument_Sans } from "next/font/google";
+import { Instrument_Sans, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/shared/Nav/Nav";
 import Footer from "@/components/shared/Footer/Footer";
@@ -12,6 +12,12 @@ const instrumentSans = Instrument_Sans({
   variable: "--instrumentSans",
   subsets: ["latin"],
   weight: ["400", "600", "600", "700"],
+});
+
+const interTight = Inter_Tight({
+  variable: "--interTight",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 const CareFreeSemiBold = localFont({
@@ -48,7 +54,7 @@ export default async function RootLayout({
     <SessionProvider session={session}>
       <html lang='en'>
         <body
-          className={`${CareFreeSemiBold.variable} ${instrumentSans.variable} ${CareFreeSemiBoldItalic.variable} ${Magilio.variable}`}
+          className={`${CareFreeSemiBold.variable} ${instrumentSans.variable} ${CareFreeSemiBoldItalic.variable} ${Magilio.variable} ${interTight.variable} `}
         >
           <Nav />
           <Toaster

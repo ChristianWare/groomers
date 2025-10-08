@@ -28,7 +28,6 @@
   text-align: center;
 }
 
-/* ===== Desktop-first table ===== */
 .tableScroll {
   overflow-x: auto;
   margin-bottom: 24px;
@@ -37,11 +36,11 @@
 }
 
 .tableWrap {
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   border-radius: 10px;
   overflow: hidden;
-  background: #fff;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+  /* background: #fff; */
+  /* box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02); */
 }
 
 .table {
@@ -49,61 +48,62 @@
   border-collapse: separate;
   border-spacing: 0;
   table-layout: fixed;
+  /* background-color: var(--darkTan); */
+  /* padding: 0.2rem; */
 }
 
 .th,
 .td {
   padding: 8px;
   vertical-align: middle;
-  background: #fff;
+  background: var(--tan);
+  border: 1px solid var(--brown);
+  border-right: none;
+  border-bottom: none;
   font-size: 14px;
   line-height: 1.35;
   word-wrap: break-word;
+  /* border-radius: 10px; */
 }
 
 .tablethead .th,
 .table thead .th,
 .table thead th {
-  background: #fafafa;
+  background: var(--tan);
   font-weight: 600;
   text-align: left;
   padding: 12px 10px;
   white-space: nowrap;
 }
 
-/* grid lines */
-.table tr .td,
-.table tr td,
-.table thead tr .th,
-.table thead tr th {
-  border-bottom: 1px solid #eee;
-  border-right: 1px solid #eee;
+.tablethead .th:last-child {
+  border-right: 1px solid var(--brown);
+  border-top-right-radius: 10px;
 }
 
-/* edge cleanup */
-.table tr > .td:last-child,
-.table tr > td:last-child,
-.table thead tr > .th:last-child,
-.table thead tr > th:last-child {
-  border-right: none;
-}
-.table tbody tr:last-child > .td,
-.table tbody tr:last-child > td {
-  border-bottom: none;
+.tablethead .th:first-child {
+  border-left: 1px solid var(--brown);
+  border-top-left-radius: 10px;
 }
 
-/* header & cell helpers (kept) */
-.th {
-  border-bottom: 1px solid #eee;
-  border-right: 1px solid #eee;
-  background: #fafafa;
-}
-.td {
-  border-bottom: 1px solid #eee;
-  border-right: 1px solid #eee;
+.center {
+  border: 1px solid var(--brown);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
-/* badges */
+.table thead .th:first-child,
+.table thead th:first-child {
+  border-left: 1px solid var(--brown);
+  border-top-left-radius: 10px;
+}
+
+.table thead .th:last-child,
+.table thead th:last-child {
+  border-right: 1px solid var(--brown);
+  border-top-right-radius: 10px;
+}
+
 .badge {
   display: inline-block;
   padding: 2px 8px;
@@ -157,12 +157,10 @@
     box-shadow: none;
   }
 
-  /* hide the table header row (we’ll show labels per cell) */
   .table thead {
     display: none;
   }
 
-  /* turn table structure into blocks */
   .table,
   .table tbody,
   .table tr,
@@ -171,14 +169,11 @@
     width: 100%;
   }
 
-  /* each TR is a card */
   .table tbody tr {
-    background: #fff;
-    border: 1px solid #e6e6e6;
+    background: var(--tan);
+    border: 1px solid var(--darkTaniii);
     border-radius: 12px;
-    /* margin: 12px 8px 0; */
     padding: 10px 12px;
-    /* box-shadow: 0 1px 2px rgba(0,0,0,0.02); */
   }
 
   /* remove cell borders inside cards */
@@ -217,7 +212,7 @@
   .table tbody tr > td:last-child {
     margin-top: 8px;
     padding-top: 12px;
-    border-top: 1px dashed #eee;
+    border-top: 1px solid var(--tanii);
     display: flex;
     gap: 8px;
     align-items: center;
