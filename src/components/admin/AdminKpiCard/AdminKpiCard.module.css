@@ -1,0 +1,30 @@
+.container {
+  border: 1px solid var(--lightgray);
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.label {
+  font-size: 1.6rem;
+  font-family: var(--SFUIMedium);
+  text-transform: none;
+}
+
+.value {
+  font-size: 2rem;
+  color: var(--blue);
+  font-family: var(--SFUIMedium);
+}
+
+
+@media screen and (max-width: 568px) {
+  .container {
+    gap: 3rem;
+  }
+}
