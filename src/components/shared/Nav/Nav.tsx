@@ -142,8 +142,7 @@ export default function Nav({
 
           <div className={styles.btnContainerii}>
             <Button
-              href='https://calendly.com/chris-ware-dev/discovery-call'
-              target='_blank'
+              href='/booking'
               text='Book now'
               btnType='green'
               // onClick={closeMenu}
@@ -159,12 +158,7 @@ export default function Nav({
           )}
 
         <div className={styles.btnContainer}>
-          <Button
-            href='https://calendly.com/chris-ware-dev/discovery-call'
-            target='_blank'
-            text='Book now'
-            btnType='green'
-          />
+          <Button href='/booking' text='Book now' btnType='green' />
         </div>
 
         <span
