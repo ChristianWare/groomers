@@ -1,9 +1,11 @@
+import styles from "./DashboardPageIntro.module.css";
 import { redirect } from "next/navigation";
 import { auth } from "../../../../auth";
 import { db } from "@/lib/db";
 import Link from "next/link";
 import { revalidatePath } from "next/cache";
 import CancelBookingForm from "../CancelBookingForm/CancelBookingForm";
+import UserKpiCard from "../UserKpiCard/UserKpiCard";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -85,7 +87,7 @@ export default async function DashboardPageIntro() {
   const statusMap = Object.fromEntries(
     statusCounts.map((s) => [
       String(s.status),
-      typeof s._count === "object" && s._count ? (s._count._all ?? 0) : 0,
+      typeof s._count === "object" && s._count ? s._count._all ?? 0 : 0,
     ])
   );
 
@@ -104,62 +106,24 @@ export default async function DashboardPageIntro() {
   const next = upcoming[0];
 
   return (
-    <section style={{ padding: "2rem" }}>
-      {/* Header / Greeting */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 16,
-          marginBottom: 12,
-        }}
-      >
-        <h1 style={{ fontSize: 22, fontWeight: 600, margin: 0 }}>
-          {name}&apos;s Dashboard
-        </h1>
-        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-          <Link href='/' style={outlineBtn}>
-            Home
-          </Link>
-          <Link href='/booking' style={primaryBtn}>
-            Book an Appointment
-          </Link>
-          <Link href='/account' style={outlineBtn}>
-            Profile & Settings
-          </Link>
-          <Link href='/dashboard/my-bookings' style={outlineBtn}>
-            My Bookings
-          </Link>
-          {session.user.role === "ADMIN" && (
-            <Link href='/admin' style={outlineBtn}>
-              Admin Panel
-            </Link>
-          )}
-          {session.user.isGroomer && (
-            <Link href='/groomer' style={outlineBtn}>
-              Groomer Panel
-            </Link>
-          )}
+    <div>
+      <section className={styles.container}>
+        <div className={styles.content}>
+          <h1 className={styles.heading}>{name}&apos;s Dashboard</h1>
+          <p className={styles.copy}>
+            Welcome back! Here&apos;s what&apos;s happening with your bookings.
+          </p>
         </div>
-      </div>
+      </section>
 
-      {/* Summary cards */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(180px,1fr))",
-          gap: 12,
-          marginBottom: 16,
-        }}
-      >
-        <Card
-          title='Upcoming'
+      <div className={styles.kpiCards}>
+        <UserKpiCard
+          label='Upcomming'
           value={(statusMap["CONFIRMED"] ?? 0) + (statusMap["PENDING"] ?? 0)}
         />
-        <Card title='Completed' value={statusMap["COMPLETED"] ?? 0} />
-        <Card title='Canceled' value={statusMap["CANCELED"] ?? 0} />
-        <Card title='No-shows' value={statusMap["NO_SHOW"] ?? 0} />
+        <UserKpiCard label='Completed' value={statusMap["COMPLETED"] ?? 0} />
+        <UserKpiCard label='Canceled' value={statusMap["CANCELED"] ?? 0} />
+        <UserKpiCard label='No-shows' value={statusMap["NO_SHOW"] ?? 0} />
       </div>
 
       {/* Next appointment */}
@@ -202,7 +166,11 @@ export default async function DashboardPageIntro() {
             <Info label='Time' value={timeFmt.format(new Date(next.start))} />
             <Info
               label='Service'
-              value={`${next.service?.name ?? "—"}${next.service?.durationMin ? ` (${next.service.durationMin}m)` : ""}`}
+              value={`${next.service?.name ?? "—"}${
+                next.service?.durationMin
+                  ? ` (${next.service.durationMin}m)`
+                  : ""
+              }`}
             />
             <Info
               label='Groomer'
@@ -316,22 +284,11 @@ export default async function DashboardPageIntro() {
           </tbody>
         </table>
       </div>
-    </section>
-  );
-}
-
-/* ───────────── small presentational bits ───────────── */
-
-function Card({ title, value }: { title: string; value: React.ReactNode }) {
-  return (
-    <div style={card}>
-      <div style={{ fontSize: 12, color: "#666", marginBottom: 6 }}>
-        {title}
-      </div>
-      <div style={{ fontSize: 20, fontWeight: 600 }}>{value}</div>
     </div>
   );
 }
+
+
 
 function Info({ label, value }: { label: string; value: React.ReactNode }) {
   return (
@@ -349,12 +306,12 @@ function pill(status: string): React.CSSProperties {
     status === "CONFIRMED"
       ? "#0a7"
       : status === "PENDING"
-        ? "#d88a00"
-        : status === "COMPLETED"
-          ? "#0366d6"
-          : status === "CANCELED"
-            ? "#999"
-            : "#b33636"; // NO_SHOW
+      ? "#d88a00"
+      : status === "COMPLETED"
+      ? "#0366d6"
+      : status === "CANCELED"
+      ? "#999"
+      : "#b33636";
   return {
     display: "inline-block",
     padding: "2px 8px",
@@ -365,22 +322,13 @@ function pill(status: string): React.CSSProperties {
   };
 }
 
-/* ───────────── reused styles ───────────── */
 const card: React.CSSProperties = {
   border: "1px solid #e5e5e5",
   borderRadius: 8,
   padding: 12,
   background: "white",
 };
-const primaryBtn: React.CSSProperties = {
-  padding: "8px 14px",
-  borderRadius: 6,
-  background: "#111",
-  color: "white",
-  border: "1px solid #111",
-  cursor: "pointer",
-  textDecoration: "none",
-};
+
 const outlineBtn: React.CSSProperties = {
   padding: "8px 14px",
   borderRadius: 6,

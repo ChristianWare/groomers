@@ -14,18 +14,17 @@ import { useState } from "react";
 import FalseButton from "@/components/shared/FalseButton/FalseButton";
 import { useSession } from "next-auth/react";
 
-
 const NAV_ITEMS = [
   { title: "Dashboard", href: "/dashboard", icon: <House /> },
-  { title: "Book Appointment", href: "/booking", icon: <Calendar /> },
-  { title: "My Bookings", href: "/dashboard/my-bookings", icon: <Listing /> }, // or anchor within /dashboard
+  { title: "Book Aptmnt", href: "/booking", icon: <Calendar /> },
+  { title: "My Bookings", href: "/dashboard/my-bookings", icon: <Listing /> },
   { title: "Profile", href: "/dashboard/profile", icon: <Users /> },
   { title: "Settings", href: "/dashboard/settings", icon: <Cog /> },
   {
     title: "Billing & Receipts",
     href: "/dashboard/billing-and-receipts",
     icon: <Report />,
-  }, // if you have this route
+  },
 ];
 
 export default function UserSideNav() {
@@ -113,17 +112,17 @@ export default function UserSideNav() {
 
         <div className={styles.btnContainer}>
           <UserButton />
-          <Button btnType='blue' text='Go Home' href='/' />
+          <Button btnType='dashBoardBrown' text='Go Home' href='/' />
           {isAdmin && (
             <Button
-              btnType='blueOutline'
+              btnType='dashBoardBrownOutline'
               text='Admin Dashboard'
               href='/admin'
             />
           )}
           {isGroomer && (
             <Button
-              btnType='orangeOutline'
+              btnType='dashBoardBrownOutline'
               text='Groomer Dashboard'
               href='/groomer'
             />

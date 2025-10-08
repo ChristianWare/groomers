@@ -1,19 +1,13 @@
 .container {
-  background-color: var(--gray);
-  margin-top: -6rem;
+  background-color: var(--darkTan);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 3rem;
 }
 
 .content {
-  background-color: var(--blue);
-  margin: 1rem;
   border-radius: 15px;
-  padding: 3rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 3rem;
-}
-
-.left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -22,12 +16,26 @@
 }
 
 .heading {
-  color: var(--white);
+  color: var(--brown);
+  font-size: 4rem;
+  font-family: var(--instrumentSans);
+  text-transform: none;
+  letter-spacing: -2px;
+  font-weight: 600;
 }
 
 .copy {
-  color: var(--white);
-  width: 375px;
+  color: var(--brown);
+  /* width: 375px; */
+}
+
+.kpiCards,
+.quickLinks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
 }
 
 .btnContainer {
@@ -43,41 +51,14 @@
   width: 50%;
 }
 
-.right {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* .dogContainer {
-  width: 20rem;
-  height: 20rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px dashed var(--white);
-  border-radius: 50%;
-} */
-
-.dog {
-  color: var(--white);
-  width: 15rem;
-  height: 15rem;
-}
-
 @media screen and (max-width: 1268px) {
-  .content {
-    grid-template-columns: 1fr;
-    grid-gap: 5rem;
+  .kpiCards,
+  .quickLinks {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .heading,
-  .copy {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
+@media screen and (max-width: 1068px) {
   .btnContainer {
     width: 50%;
     margin-left: auto;
@@ -95,6 +76,10 @@
   .btnContainer {
     width: 80%;
   }
+  .kpiCards,
+  .quickLinks {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 @media screen and (max-width: 568px) {
@@ -102,7 +87,8 @@
     width: 100%;
   }
 
-  .btnContainer, .adminBtnContainer {
+  .btnContainer,
+  .adminBtnContainer {
     width: 100%;
     grid-template-columns: 1fr;
   }
