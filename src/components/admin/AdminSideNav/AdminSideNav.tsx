@@ -108,15 +108,15 @@ export default function AdminSideNav() {
 
         <div className={styles.btnContainer}>
           <UserButton />
-          <Button btnType='blue' text='Go Home' href='/' />
+          <Button btnType='dashBoardBrown' text='Go Home' href='/' />
           <Button
-            btnType='blueOutline'
+            btnType='dashBoardBrownOutline'
             text='User Dashboard'
             href='/dashboard'
           />
           {isGroomer && (
             <Button
-              btnType='orangeOutline'
+              btnType='dashBoardBrownOutline'
               text='Groomer Dashboard'
               href='/groomer'
             />

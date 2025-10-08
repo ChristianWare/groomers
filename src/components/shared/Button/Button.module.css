@@ -10,7 +10,6 @@
   justify-content: center;
   gap: 1rem;
   padding: 0.7rem 3rem;
-  /* font-family: var(--montserrat); */
   font-weight: 400;
   font-size: 1.1rem;
   letter-spacing: 1px;
@@ -86,4 +85,36 @@
   border: 1px solid var(--olive);
   background-color: var(--olive);
   color: var(--tan);
+}
+
+.dashBoardBrown {
+  padding: 1.3rem 2rem;
+  font-family: var(--interTight);
+  font-weight: 600;
+  font-size: 1.5rem;
+  border-radius: 7px;
+  background-color: var(--brown);
+  color: var(--tan);
+}
+
+.dashBoardBrown:hover {
+  background-color: var(--tanii);
+  color: var(--brown);
+}
+
+.dashBoardBrownOutline {
+  padding: 1.3rem 2rem;
+  font-family: var(--interTight);
+  font-weight: 600;
+  font-size: 1.5rem;
+  border-radius: 7px;
+  background-color: transparent;
+  color: var(--brown);
+  border: 1px solid var(--darkTaniii);
+}
+
+.dashBoardBrownOutline:hover {
+  border: 1px solid var(--tanii);
+  background-color: var(--tanii);
+  color: var(--brown);
 }
