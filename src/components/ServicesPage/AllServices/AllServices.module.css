@@ -1,0 +1,195 @@
+.container {
+  background-color: var(--tan);
+}
+
+.introInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  padding: 3rem 0rem;
+  margin-bottom: 3rem;
+}
+
+.heading {
+  text-align: center;
+}
+
+.dataContainer {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  border: 1px solid var(--tanii);
+  padding: 2rem;
+  border-radius: 15px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 3rem;
+  padding: 10rem 0rem;
+}
+
+.card:nth-child(even) .cardRight {
+  order: -1;
+}
+
+.cardLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 3rem;
+  position: relative;
+}
+
+.id {
+  font-size: 15rem;
+  font-weight: 700;
+  opacity: 0.5;
+  color: var(--gray);
+  position: absolute;
+  top: -100px;
+  left: 0;
+  font-family: var(--mulish);
+}
+
+.featuresMapContainer {
+  list-style: none;
+  color: var(--brown);
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+}
+
+.feature {
+  border-bottom: 1px solid var(--darkTanii);
+  width: 100%;
+  padding-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+.priceBox {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+}
+
+.startingAt {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.price {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7rem;
+  font-weight: 700;
+  font-family: var(--mulish);
+}
+
+.btnContainer {
+  display: grid;
+  width: 100%;
+}
+
+.imgContainer,
+.imgContainerii {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.img {
+  object-fit: cover;
+}
+
+.imgContainerii {
+  display: none;
+}
+
+@media screen and (max-width: 1268px) {
+  .card {
+    grid-gap: 5rem;
+  }
+
+  .dataContainer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1268px) {
+  .card {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .cardLeft {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .imgContainer {
+    display: none;
+  }
+
+  .imgContainerii {
+    height: 350px;
+    display: block;
+  }
+
+  .btnContainer {
+    display: grid;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .desc {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .cardLeft {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .id {
+    left: 50%;
+    top: -100px;
+    transform: translateX(-50%);
+  }
+
+  .desc {
+    text-align: left;
+    color: var(--text);
+    width: 100%;
+  }
+}

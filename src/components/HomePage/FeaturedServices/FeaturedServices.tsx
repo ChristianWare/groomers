@@ -61,16 +61,11 @@ export default function FeaturedServices() {
               <div key={x.id} className={styles.card}>
                 <div className={styles.bottomCornerContainer}>
                   <div className={styles.bottomCorner}>
-                    {/* <div className={styles.metaTop}> */}
-                      <h3 className={styles.title}>{x.title}</h3>
-                    {/* </div> */}
+                    <h3 className={styles.title}>{x.title}</h3>
                   </div>
                 </div>
                 <div className={styles.imgContainer}>
                   <div className={styles.imgOverlay} />
-                  {/* <div className={styles.metaTop}>
-                    <h3 className={styles.title}>{x.title}</h3>
-                  </div> */}
                   <div className={styles.metaBottom}>
                     <p className={styles.desc}>{x.description}</p>
                   </div>

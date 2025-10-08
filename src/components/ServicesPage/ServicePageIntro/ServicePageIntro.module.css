@@ -1,0 +1,50 @@
+.container {
+  background-color: var(--tan);
+  padding: 10rem 0rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  grid-gap: 5rem;
+}
+
+.left {
+  align-self: flex-start;
+  position: -webkit-sticky;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+  top: 100px;
+}
+
+.copy {
+  color: var(--text);
+}
+
+@media screen and (max-width: 1268px) {
+  .content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    grid-gap: 7rem;
+  }
+
+  .left {
+    position: static;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .copy {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .copy {
+    width: 100%;
+  }
+}
