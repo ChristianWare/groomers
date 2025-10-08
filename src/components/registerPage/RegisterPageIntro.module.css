@@ -23,7 +23,7 @@
 .bottomCornerContainer {
   position: absolute;
   bottom: -1px;
-  right: -1px;
+  left: -1px;
   z-index: 2;
   pointer-events: auto;
   width: 30%;
@@ -46,11 +46,11 @@
   width: 40px;
   height: 40px;
   bottom: 1px;
-  left: -40px;
+  right: -40px;
   background-color: transparent;
   border-top-left-radius: 15px;
   box-shadow: -1em -1rem var(--tan);
-  transform: rotate(-180deg);
+  transform: rotate(-90deg);
 }
 
 .bottomCorner::before {
@@ -58,17 +58,17 @@
   content: "";
   width: 40px;
   height: 40px;
-  right: 1px;
+  left: 1px;
   top: -40px;
   background-color: transparent;
   border-top-left-radius: 15px;
   box-shadow: -1em -1rem var(--tan);
-  transform: rotate(-180deg);
+  transform: rotate(-90deg);
 }
 
 .top {
   display: grid;
-  grid-template-columns: 4fr 2fr;
+  grid-template-columns: 2fr 4fr;
   grid-gap: 3rem;
 }
 
@@ -103,9 +103,10 @@
 .heading {
   color: var(--white);
   position: absolute;
-  left: 2rem;
+  right: 2rem;
   top: 2rem;
   z-index: 3;
+  text-align: right;
 }
 
 .formContainer {
@@ -118,6 +119,7 @@
   margin-bottom: 2rem;
   color: var(--blue);
   font-family: var(--SFUIMedium);
+  width: 90%;
 }
 
 .btnContainer {
@@ -137,12 +139,13 @@
   } */
 
   .top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
     margin-bottom: 5rem;
+  }
+
+  .right {
+    order: -1;
   }
 
   .formContainer {
