@@ -12,7 +12,7 @@ export default function RecentWorks() {
           <div className={styles.top}>
             <SectionIntro title='Gallery' />
             <h2 className={styles.heading}>Recent Works</h2>
-            <p className={styles.copy}>From our portfolio</p>
+            <p className={styles.copy}>From our gallery</p>
           </div>
           <div className={styles.bottom}>
             <Marquee />

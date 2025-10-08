@@ -14,7 +14,7 @@
   --lightOrange: rgba(255, 113, 67, 0.5);
   --gray: #edeff1;
   --white: #ffffff;
-  --text: #695B4D;
+  --text: #695b4d;
   --lightgray: #d7cfcf;
   --brown: #594a3c;
 }
@@ -63,14 +63,13 @@ span {
   font-family: var(--Magilio);
   /* hyphens: auto; */
   line-height: 1.2;
-    -webkit-font-smoothing: antialiased;
-
+  -webkit-font-smoothing: antialiased;
 }
 
 h1 {
   text-transform: uppercase;
   font-size: 8rem;
-  line-height: 1;
+  line-height: 1.1;
   letter-spacing: 2px;
 }
 
@@ -153,12 +152,6 @@ button {
   color: var(--black);
 } */
 
-@media screen and (max-width: 1168px) {
-  /* h1 {
-    font-size: 9vw;
-  } */
-}
-
 @media screen and (max-width: 968px) {
   html {
     font-size: 55%;
@@ -177,10 +170,6 @@ button {
 }
 
 @media screen and (max-width: 768px) {
-  /* h1 {
-    font-size: 8vw;
-  } */
-
   input,
   textarea,
   select,

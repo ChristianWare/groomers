@@ -56,7 +56,9 @@
 
 .bottomRight {
   width: 100%;
-  /* order: -1; */
+  border: 1px solid var(--tanii);
+  padding: 2rem;
+  border-radius: 10px;
 }
 
 .imgContainer {
